@@ -1,0 +1,11 @@
+name: gh_action
+on: [push, pull_request]
+jobs:
+  gh_action_go:
+    name: gh_action_go
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@1.0.0
+      - uses: muroon/gh_action_go@master
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
